@@ -1,14 +1,18 @@
-# fp_API_design
-looks like SQL will work
+# Overview
+SQL is better for this kind of information
 
-schema: people and houses
+Tables (and schema): people and houses
 
-people: name, age, number of cohabitants, house iD
+People: name, age, number of cohabitants, house ID
 
-house: house ID, owner, postcode and address
+House: house ID, owner, postcode and address
 
-API should handle get requests for this data for people and houses. as well as using joins
+# API
+API should handle get requests for:
+- house lookup. send the name of a house and recieve its address and owner
+- age bracket/household size lookup. perform a SQL query with specific arguments here and return the result
 
-website.com/people and website.com/houses
+Content types will be returned as json (Content-Type: application/json)
 
-content types will be json or whatever format is best to export from the SQL database
+## Routes
+website.com/houses and website.com/people?age=x&household_size=y
